@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+service Comunicator {
+
+  rpc saveAnimal(protoAnimal) returns (stringResponse);
+  rpc findByRegNumber(longRequest) returns (protoAnimal);
+  rpc updateAnimal(protoAnimal) returns (stringResponse);
+  rpc deleteAnimalByRegNumber(longRequest) returns (stringResponse);
+  rpc findAllAnimals(empty) returns (stream protoAnimal);
+  rpc findByDate(protoDate) returns (stream protoAnimal);
+  rpc findByOrigin(stringRequest) returns (stream protoAnimal);
+
+
+}
+message protoListAnimals{
+  repeated protoAnimal animals = 1;
+}
+
+message stringResponse{
+  string response = 1;
+}
+message stringRequest{
+  string  request = 1;
+}
+
+message protoDate {
+  int32 day = 1;
+  int32 month = 2;
+  int32 year = 3;
+}
+message protoAnimal{
+  protoDate date = 1;
+  double  wight = 2;
+  int64 regNumber = 3;
+  string origin = 4;
+
+}
+message protoProduct {
+  int32  id  = 1;
+  int32  nOfParts = 2;
+  repeated protoAnimal animals = 3;
+
+}
+message intRequest{
+  int32 request = 1;
+}
+
+message longRequest{
+  int64 request = 1;
+}
+
+message empty{}
