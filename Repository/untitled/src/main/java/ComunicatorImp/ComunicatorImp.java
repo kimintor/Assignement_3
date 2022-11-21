@@ -20,7 +20,7 @@ import java.util.List;
 public class ComunicatorImp extends ComunicatorGrpc.ComunicatorImplBase {
 
     @Override
-    public void findAllAnimals(ComunicatorOuterClass.empty empty, StreamObserver<ComunicatorOuterClass.protoListAnimals> responseStream){
+    public void findAllAnimals(ComunicatorOuterClass.empty empty, StreamObserver<ComunicatorOuterClass.protoAnimal> responseStream){
         System.out.println("Riecieved request to get all Animals");
         List<Animal> result = new ArrayList<>();
 
@@ -31,16 +31,7 @@ public class ComunicatorImp extends ComunicatorGrpc.ComunicatorImplBase {
             result.addAll(AnimalDao.getInstance().getAll());
             System.out.println("in impl with list of size::"+result.size());
 
-            ComunicatorOuterClass.protoListAnimals listAnimals = ComunicatorOuterClass.protoListAnimals.newBuilder().buildPartial();
 
-            for (Animal x:result) {
-                listAnimals.newBuilder().addAnimals(ComunicatorOuterClass.protoAnimal.newBuilder()
-                        .setRegNumber(x.getRegNumber()).build()).buildPartial();
-                System.out.println(listAnimals.getAnimalsCount());
-            }
-
-
-          responseStream.onNext(listAnimals);
             responseStream.onCompleted();
         } catch (Exception e) {
             System.out.println(e.getMessage());

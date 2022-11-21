@@ -1,7 +1,3 @@
-package protobuff;
-import protobuff.ComunicatorOuterClass;
-
-
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
@@ -141,28 +137,28 @@ public final class ComunicatorGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<ComunicatorOuterClass.empty,
-      ComunicatorOuterClass.protoListAnimals> getFindAllAnimalsMethod;
+      ComunicatorOuterClass.protoAnimal> getFindAllAnimalsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "findAllAnimals",
       requestType = ComunicatorOuterClass.empty.class,
-      responseType = ComunicatorOuterClass.protoListAnimals.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+      responseType = ComunicatorOuterClass.protoAnimal.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<ComunicatorOuterClass.empty,
-      ComunicatorOuterClass.protoListAnimals> getFindAllAnimalsMethod() {
-    io.grpc.MethodDescriptor<ComunicatorOuterClass.empty, ComunicatorOuterClass.protoListAnimals> getFindAllAnimalsMethod;
+      ComunicatorOuterClass.protoAnimal> getFindAllAnimalsMethod() {
+    io.grpc.MethodDescriptor<ComunicatorOuterClass.empty, ComunicatorOuterClass.protoAnimal> getFindAllAnimalsMethod;
     if ((getFindAllAnimalsMethod = ComunicatorGrpc.getFindAllAnimalsMethod) == null) {
       synchronized (ComunicatorGrpc.class) {
         if ((getFindAllAnimalsMethod = ComunicatorGrpc.getFindAllAnimalsMethod) == null) {
           ComunicatorGrpc.getFindAllAnimalsMethod = getFindAllAnimalsMethod =
-              io.grpc.MethodDescriptor.<ComunicatorOuterClass.empty, ComunicatorOuterClass.protoListAnimals>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              io.grpc.MethodDescriptor.<ComunicatorOuterClass.empty, ComunicatorOuterClass.protoAnimal>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "findAllAnimals"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   ComunicatorOuterClass.empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  ComunicatorOuterClass.protoListAnimals.getDefaultInstance()))
+                  ComunicatorOuterClass.protoAnimal.getDefaultInstance()))
               .setSchemaDescriptor(new ComunicatorMethodDescriptorSupplier("findAllAnimals"))
               .build();
         }
@@ -172,28 +168,28 @@ public final class ComunicatorGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<ComunicatorOuterClass.protoDate,
-      ComunicatorOuterClass.protoListAnimals> getFindByDateMethod;
+      ComunicatorOuterClass.protoAnimal> getFindByDateMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "findByDate",
       requestType = ComunicatorOuterClass.protoDate.class,
-      responseType = ComunicatorOuterClass.protoListAnimals.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+      responseType = ComunicatorOuterClass.protoAnimal.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<ComunicatorOuterClass.protoDate,
-      ComunicatorOuterClass.protoListAnimals> getFindByDateMethod() {
-    io.grpc.MethodDescriptor<ComunicatorOuterClass.protoDate, ComunicatorOuterClass.protoListAnimals> getFindByDateMethod;
+      ComunicatorOuterClass.protoAnimal> getFindByDateMethod() {
+    io.grpc.MethodDescriptor<ComunicatorOuterClass.protoDate, ComunicatorOuterClass.protoAnimal> getFindByDateMethod;
     if ((getFindByDateMethod = ComunicatorGrpc.getFindByDateMethod) == null) {
       synchronized (ComunicatorGrpc.class) {
         if ((getFindByDateMethod = ComunicatorGrpc.getFindByDateMethod) == null) {
           ComunicatorGrpc.getFindByDateMethod = getFindByDateMethod =
-              io.grpc.MethodDescriptor.<ComunicatorOuterClass.protoDate, ComunicatorOuterClass.protoListAnimals>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              io.grpc.MethodDescriptor.<ComunicatorOuterClass.protoDate, ComunicatorOuterClass.protoAnimal>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "findByDate"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   ComunicatorOuterClass.protoDate.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  ComunicatorOuterClass.protoListAnimals.getDefaultInstance()))
+                  ComunicatorOuterClass.protoAnimal.getDefaultInstance()))
               .setSchemaDescriptor(new ComunicatorMethodDescriptorSupplier("findByDate"))
               .build();
         }
@@ -203,28 +199,28 @@ public final class ComunicatorGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<ComunicatorOuterClass.stringRequest,
-      ComunicatorOuterClass.protoListAnimals> getFindByOriginMethod;
+      ComunicatorOuterClass.protoAnimal> getFindByOriginMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "findByOrigin",
       requestType = ComunicatorOuterClass.stringRequest.class,
-      responseType = ComunicatorOuterClass.protoListAnimals.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+      responseType = ComunicatorOuterClass.protoAnimal.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
   public static io.grpc.MethodDescriptor<ComunicatorOuterClass.stringRequest,
-      ComunicatorOuterClass.protoListAnimals> getFindByOriginMethod() {
-    io.grpc.MethodDescriptor<ComunicatorOuterClass.stringRequest, ComunicatorOuterClass.protoListAnimals> getFindByOriginMethod;
+      ComunicatorOuterClass.protoAnimal> getFindByOriginMethod() {
+    io.grpc.MethodDescriptor<ComunicatorOuterClass.stringRequest, ComunicatorOuterClass.protoAnimal> getFindByOriginMethod;
     if ((getFindByOriginMethod = ComunicatorGrpc.getFindByOriginMethod) == null) {
       synchronized (ComunicatorGrpc.class) {
         if ((getFindByOriginMethod = ComunicatorGrpc.getFindByOriginMethod) == null) {
           ComunicatorGrpc.getFindByOriginMethod = getFindByOriginMethod =
-              io.grpc.MethodDescriptor.<ComunicatorOuterClass.stringRequest, ComunicatorOuterClass.protoListAnimals>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              io.grpc.MethodDescriptor.<ComunicatorOuterClass.stringRequest, ComunicatorOuterClass.protoAnimal>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "findByOrigin"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   ComunicatorOuterClass.stringRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  ComunicatorOuterClass.protoListAnimals.getDefaultInstance()))
+                  ComunicatorOuterClass.protoAnimal.getDefaultInstance()))
               .setSchemaDescriptor(new ComunicatorMethodDescriptorSupplier("findByOrigin"))
               .build();
         }
@@ -312,21 +308,21 @@ public final class ComunicatorGrpc {
     /**
      */
     public void findAllAnimals(ComunicatorOuterClass.empty request,
-        io.grpc.stub.StreamObserver<ComunicatorOuterClass.protoListAnimals> responseObserver) {
+        io.grpc.stub.StreamObserver<ComunicatorOuterClass.protoAnimal> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindAllAnimalsMethod(), responseObserver);
     }
 
     /**
      */
     public void findByDate(ComunicatorOuterClass.protoDate request,
-        io.grpc.stub.StreamObserver<ComunicatorOuterClass.protoListAnimals> responseObserver) {
+        io.grpc.stub.StreamObserver<ComunicatorOuterClass.protoAnimal> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindByDateMethod(), responseObserver);
     }
 
     /**
      */
     public void findByOrigin(ComunicatorOuterClass.stringRequest request,
-        io.grpc.stub.StreamObserver<ComunicatorOuterClass.protoListAnimals> responseObserver) {
+        io.grpc.stub.StreamObserver<ComunicatorOuterClass.protoAnimal> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindByOriginMethod(), responseObserver);
     }
 
@@ -362,24 +358,24 @@ public final class ComunicatorGrpc {
                   this, METHODID_DELETE_ANIMAL_BY_REG_NUMBER)))
           .addMethod(
             getFindAllAnimalsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
                 ComunicatorOuterClass.empty,
-                ComunicatorOuterClass.protoListAnimals>(
+                ComunicatorOuterClass.protoAnimal>(
                   this, METHODID_FIND_ALL_ANIMALS)))
           .addMethod(
             getFindByDateMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
                 ComunicatorOuterClass.protoDate,
-                ComunicatorOuterClass.protoListAnimals>(
+                ComunicatorOuterClass.protoAnimal>(
                   this, METHODID_FIND_BY_DATE)))
           .addMethod(
             getFindByOriginMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
                 ComunicatorOuterClass.stringRequest,
-                ComunicatorOuterClass.protoListAnimals>(
+                ComunicatorOuterClass.protoAnimal>(
                   this, METHODID_FIND_BY_ORIGIN)))
           .build();
     }
@@ -434,24 +430,24 @@ public final class ComunicatorGrpc {
     /**
      */
     public void findAllAnimals(ComunicatorOuterClass.empty request,
-        io.grpc.stub.StreamObserver<ComunicatorOuterClass.protoListAnimals> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+        io.grpc.stub.StreamObserver<ComunicatorOuterClass.protoAnimal> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getFindAllAnimalsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
     public void findByDate(ComunicatorOuterClass.protoDate request,
-        io.grpc.stub.StreamObserver<ComunicatorOuterClass.protoListAnimals> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+        io.grpc.stub.StreamObserver<ComunicatorOuterClass.protoAnimal> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getFindByDateMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
     public void findByOrigin(ComunicatorOuterClass.stringRequest request,
-        io.grpc.stub.StreamObserver<ComunicatorOuterClass.protoListAnimals> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+        io.grpc.stub.StreamObserver<ComunicatorOuterClass.protoAnimal> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getFindByOriginMethod(), getCallOptions()), request, responseObserver);
     }
   }
@@ -500,22 +496,25 @@ public final class ComunicatorGrpc {
 
     /**
      */
-    public ComunicatorOuterClass.protoListAnimals findAllAnimals(ComunicatorOuterClass.empty request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public java.util.Iterator<ComunicatorOuterClass.protoAnimal> findAllAnimals(
+        ComunicatorOuterClass.empty request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getFindAllAnimalsMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public ComunicatorOuterClass.protoListAnimals findByDate(ComunicatorOuterClass.protoDate request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public java.util.Iterator<ComunicatorOuterClass.protoAnimal> findByDate(
+        ComunicatorOuterClass.protoDate request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getFindByDateMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public ComunicatorOuterClass.protoListAnimals findByOrigin(ComunicatorOuterClass.stringRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public java.util.Iterator<ComunicatorOuterClass.protoAnimal> findByOrigin(
+        ComunicatorOuterClass.stringRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getFindByOriginMethod(), getCallOptions(), request);
     }
   }
@@ -565,30 +564,6 @@ public final class ComunicatorGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteAnimalByRegNumberMethod(), getCallOptions()), request);
     }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<ComunicatorOuterClass.protoListAnimals> findAllAnimals(
-        ComunicatorOuterClass.empty request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getFindAllAnimalsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<ComunicatorOuterClass.protoListAnimals> findByDate(
-        ComunicatorOuterClass.protoDate request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getFindByDateMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<ComunicatorOuterClass.protoListAnimals> findByOrigin(
-        ComunicatorOuterClass.stringRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getFindByOriginMethod(), getCallOptions()), request);
-    }
   }
 
   private static final int METHODID_SAVE_ANIMAL = 0;
@@ -634,15 +609,15 @@ public final class ComunicatorGrpc {
           break;
         case METHODID_FIND_ALL_ANIMALS:
           serviceImpl.findAllAnimals((ComunicatorOuterClass.empty) request,
-              (io.grpc.stub.StreamObserver<ComunicatorOuterClass.protoListAnimals>) responseObserver);
+              (io.grpc.stub.StreamObserver<ComunicatorOuterClass.protoAnimal>) responseObserver);
           break;
         case METHODID_FIND_BY_DATE:
           serviceImpl.findByDate((ComunicatorOuterClass.protoDate) request,
-              (io.grpc.stub.StreamObserver<ComunicatorOuterClass.protoListAnimals>) responseObserver);
+              (io.grpc.stub.StreamObserver<ComunicatorOuterClass.protoAnimal>) responseObserver);
           break;
         case METHODID_FIND_BY_ORIGIN:
           serviceImpl.findByOrigin((ComunicatorOuterClass.stringRequest) request,
-              (io.grpc.stub.StreamObserver<ComunicatorOuterClass.protoListAnimals>) responseObserver);
+              (io.grpc.stub.StreamObserver<ComunicatorOuterClass.protoAnimal>) responseObserver);
           break;
         default:
           throw new AssertionError();

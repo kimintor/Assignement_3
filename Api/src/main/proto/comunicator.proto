@@ -6,9 +6,9 @@ service Comunicator {
   rpc findByRegNumber(longRequest) returns (protoAnimal);
   rpc updateAnimal(protoAnimal) returns (stringResponse);
   rpc deleteAnimalByRegNumber(longRequest) returns (stringResponse);
-  rpc findAllAnimals(empty) returns (protoListAnimals);
-  rpc findByDate(protoDate) returns (protoListAnimals);
-  rpc findByOrigin(stringRequest) returns (protoListAnimals);
+  rpc findAllAnimals(empty) returns (stream protoAnimal);
+  rpc findByDate(protoDate) returns (stream protoAnimal);
+  rpc findByOrigin(stringRequest) returns (stream protoAnimal);
 
 
 }
