@@ -25,17 +25,40 @@ public class ComunicatorImp extends ComunicatorGrpc.ComunicatorImplBase {
         List<Animal> result = new ArrayList<>();
 
         try {
-
-
-            result.add(TestRepo.getInstance().getByRegNumber(12));
+            //result.add(TestRepo.getInstance().getByRegNumber(12));
             result.addAll(AnimalDao.getInstance().getAll());
-            System.out.println("in impl with list of size::"+result.size());
+            for (Animal x:result) {
+                ComunicatorOuterClass.protoDate protoDate = ComunicatorOuterClass.protoDate.newBuilder()
+                        .setDay(x.getArrivalDate().getDay())
+                        .setMonth(x.getArrivalDate().getMonth())
+                        .setYear(x.getArrivalDate().getYear()).build();
+                ComunicatorOuterClass.protoAnimal protoAnimal = ComunicatorOuterClass.protoAnimal.newBuilder()
+                        .setRegNumber(x.getRegNumber())
+                        .setDate(protoDate)
+                        .setOrigin(x.getOrigin())
+                        .setWight(x.getWeight()).build();
+                responseStream.onNext(protoAnimal);
+                System.out.println("added to stream reg number::"+x.getRegNumber());
+
+            }
 
 
             responseStream.onCompleted();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        /**
+         *     for (int i = 1; i <= 5; i++) {
+         *         StockQuote stockQuote = StockQuote.newBuilder()
+         *           .setPrice(fetchStockPriceBid(request))
+         *           .setOfferNumber(i)
+         *           .setDescription("Price for stock:" + request.getTickerSymbol())
+         *           .build();
+         *         responseObserver.onNext(stockQuote);
+         *     }
+         *     responseObserver.onCompleted();
+         * }
+         */
 
     }
     @Override

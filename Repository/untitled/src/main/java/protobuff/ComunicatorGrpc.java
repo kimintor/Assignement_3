@@ -1,3 +1,4 @@
+package protobuff;
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**

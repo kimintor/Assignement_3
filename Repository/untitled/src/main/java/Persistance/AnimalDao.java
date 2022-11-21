@@ -73,12 +73,9 @@ public class AnimalDao implements IAnimalDao{
                 Double weigth = resultSet.getDouble("weight");
                 String origin = resultSet.getString("origin");
                 String species = resultSet.getString("species");
-                Calendar cal = Calendar.getInstance();
-                cal.setTime(sqlDate);
-                int month = cal.get(Calendar.MONTH);
-                int day = cal.get(Calendar.DAY_OF_MONTH);
-                int year = cal.get(Calendar.YEAR);
-                model.Date modelDate = new model.Date(year,month,day);
+                String date = ""+sqlDate;
+                model.Date modelDate = new model.Date(date);
+
 
                 result = new Animal(modelDate,weigth,regNo,origin,species);
 
@@ -108,13 +105,12 @@ public class AnimalDao implements IAnimalDao{
                 Date sqlDate = resultSet.getDate("date_of_arrival");
                 Double weigth = resultSet.getDouble("weight");
                 String origin = resultSet.getString("origin");
+                String species = resultSet.getString("species");
+                String date = ""+sqlDate;
+                model.Date modelDate = new model.Date(date);
 
-                Calendar cal = Calendar.getInstance();
-                cal.setTime(sqlDate);
-                int month = cal.get(Calendar.MONTH);
-                int day = cal.get(Calendar.DAY_OF_MONTH);
-                int year = cal.get(Calendar.YEAR);
-                model.Date modelDate = new model.Date(1000,1,1);
+                Animal animal = new Animal(modelDate,weigth,regNo,origin,species);
+
 
                 Animal a = new Animal(modelDate,weigth,regNo,origin);
                 result.add(a);

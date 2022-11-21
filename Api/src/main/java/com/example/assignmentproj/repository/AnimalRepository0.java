@@ -5,6 +5,7 @@ import com.example.assignmentproj.model.Animal;
 import com.example.assignmentproj.model.Date;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.StatusRuntimeException;
 import org.springframework.stereotype.Repository;
 import protobuff.ComunicatorGrpc;
 import protobuff.ComunicatorOuterClass;
@@ -68,8 +69,39 @@ public class AnimalRepository0 implements IAnimalRepository {
     public List<Animal> findAll(){
 
         List<Animal> result = new ArrayList<>();
-        result = ObjectTranslator.getInstance().getListFromProto(stub.findAllAnimals(ComunicatorOuterClass.empty.newBuilder().build()));
-        return result;
+    //   result.add(ObjectTranslator.getInstance().getAnimalFromProto(stub.findAllAnimals(ComunicatorOuterClass.empty.newBuilder().build())));
+        //  return result;
+        ComunicatorOuterClass.empty req = ComunicatorOuterClass.empty.newBuilder().build();
+        Iterator<ComunicatorOuterClass.protoAnimal> protoAnimalIterator;
+
+        protoAnimalIterator = stub.findAllAnimals(req);
+
+        try {
+
+        for (int i = 1; protoAnimalIterator.hasNext();i++){
+            result.add(ObjectTranslator.getInstance().getAnimalFromProto(protoAnimalIterator.next()));
+
+        }}catch (StatusRuntimeException e){
+            System.out.println(e.getStatus());
+        }
+      /**  Stock request = Stock.newBuilder()
+                .setTickerSymbol("AU")
+                .setCompanyName("Austich")
+                .setDescription("server streaming example")
+                .build();
+        Iterator<StockQuote> stockQuotes;
+        try {
+            logInfo("REQUEST - ticker symbol {0}", request.getTickerSymbol());
+            stockQuotes = blockingStub.serverSideStreamingGetListStockQuotes(request);
+            for (int i = 1; stockQuotes.hasNext(); i++) {
+                StockQuote stockQuote = stockQuotes.next();
+                logInfo("RESPONSE - Price #" + i + ": {0}", stockQuote.getPrice());
+            }
+        } catch (StatusRuntimeException e) {
+            logInfo("RPC failed: {0}", e.getStatus());
+        }
+       */
+      return result;
     }
 
     public List<Animal>findByDate(Date date) {
