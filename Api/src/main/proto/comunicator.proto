@@ -9,6 +9,7 @@ service Comunicator {
   rpc findAllAnimals(empty) returns (stream protoAnimal);
   rpc findByDate(protoDate) returns (stream protoAnimal);
   rpc findByOrigin(stringRequest) returns (stream protoAnimal);
+  rpc findAllProducts(empty)returns (stream protoProduct);
 
 
 }

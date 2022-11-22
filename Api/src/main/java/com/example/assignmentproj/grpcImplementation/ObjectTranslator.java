@@ -22,6 +22,22 @@ public class ObjectTranslator {
         return instance;
     }
 
+    /**
+     *
+     * // NB this is a set repeated field in proto
+     * Test.Builder b = Test.newBuilder();
+     *
+     * for (i = 0; i < somearr.size(); i++) {
+     *     float x = getX; // somehow?
+     *     float y = getY; // ??
+     *     b.addPoint(Point.newBuilder().setX(x).setY(y).build());
+     * }
+     *
+     * Test mytest = b.build();
+     * @param animal
+     * @return
+     */
+
     public protoAnimal getProtoAnimal(Animal animal){
         protoDate date = protoDate.newBuilder().setDay(animal.getArrivalDate().getDay())
                 .setMonth(animal.getArrivalDate().getMonth())
